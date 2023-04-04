@@ -1,7 +1,7 @@
 package com.example.a5month6dz.data.remote.apiservice
 
 import com.example.a5month6dz.models.ArticlesItem
-import com.example.a5month6dz.models.NewsClass
+import com.example.a5month6dz.models.NewsModel
 import retrofit2.http.GET
 import retrofit2.http.Query
 
@@ -11,5 +11,5 @@ interface TopHeadlinesApiService {
     suspend fun fetchTopHeadlines(
         @Query("page") page: String,
         @Query("q") query: Int
-    ): NewsClass<ArticlesItem>
+    ): NewsModel<ArticlesItem>
 }

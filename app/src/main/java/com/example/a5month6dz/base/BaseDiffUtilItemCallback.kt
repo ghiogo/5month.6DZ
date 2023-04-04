@@ -3,7 +3,7 @@ package com.example.a5month6dz.base
 import android.annotation.SuppressLint
 import androidx.recyclerview.widget.DiffUtil
 
-class BaseDiffUtilItemCallback <T : IBaseDiffModel> : DiffUtil.ItemCallback<T>() {
+class BaseDiffUtilItemCallback<T : IBaseDiffModel> : DiffUtil.ItemCallback<T>() {
 
     override fun areItemsTheSame(oldItem: T, newItem: T): Boolean {
         return oldItem.url == newItem.url
@@ -14,4 +14,3 @@ class BaseDiffUtilItemCallback <T : IBaseDiffModel> : DiffUtil.ItemCallback<T>()
         return oldItem == newItem
     }
 }
-

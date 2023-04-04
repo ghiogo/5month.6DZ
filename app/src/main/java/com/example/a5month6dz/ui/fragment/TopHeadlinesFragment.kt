@@ -1,6 +1,5 @@
 package com.example.a5month6dz.ui.fragment
 
-import android.util.Log
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -13,7 +12,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
-class TopHeadlinesFragment : BaseFragment<FragmentTopHeadlinesBinding,TopHeadlinesViewModel>(R.layout.fragment_top_headlines) {
+class TopHeadlinesFragment :
+    BaseFragment<FragmentTopHeadlinesBinding, TopHeadlinesViewModel>(R.layout.fragment_top_headlines) {
 
     override val binding by viewBinding(FragmentTopHeadlinesBinding::bind)
     override val viewModel: TopHeadlinesViewModel by viewModels()
@@ -27,10 +27,8 @@ class TopHeadlinesFragment : BaseFragment<FragmentTopHeadlinesBinding,TopHeadlin
     }
 
     override fun setupObserves() {
-        lifecycleScope.launch{
+        lifecycleScope.launch {
             viewModel.fetchTopHeadlines().collect {
-                Log.e("tag", newsAdapter.submitData(it).toString()
-                )
                 newsAdapter.submitData(it)
             }
         }

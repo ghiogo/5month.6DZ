@@ -21,7 +21,7 @@ class TopHeadlinesAdapter : PagingDataAdapter<ArticlesItem, TopHeadlinesAdapter.
             desc.text = item?.description
             source.text = item?.source?.name
             time.text = item?.content
-            img.setImage(item?.urlToImage!!)
+            img.setImage(item?.urlToImage.toString())
         }
     }
 

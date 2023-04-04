@@ -1,6 +1,7 @@
 package com.example.a5month6dz.data.remote
 
 import com.example.a5month6dz.data.remote.apiservice.TopHeadlinesApiService
+import com.example.a5month6dz.utils.Constant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -14,7 +15,7 @@ class RetrofitClient {
         .writeTimeout(30, TimeUnit.SECONDS).build()
 
     val retrofitClient = Retrofit.Builder()
-        .baseUrl("https://newsapi.org/")
+        .baseUrl(Constant.BASE_URL)
         .addConverterFactory(GsonConverterFactory.create())
         .client(okHttpClient)
         .build()
